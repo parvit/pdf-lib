@@ -182,10 +182,10 @@ class PDFContext {
   }
 
   enumerateIndirectObjects(): [PDFRef, PDFObject][] {
-    let entries = Array.from(this.indirectObjects.entries());
-    
-    if( this.needsReordering ) {
-      return entries.sort( byAscendingObjectNumber );
+    const entries = Array.from(this.indirectObjects.entries());
+
+    if (this.needsReordering) {
+      return entries.sort(byAscendingObjectNumber);
     }
     return entries;
   }
